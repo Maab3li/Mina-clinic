@@ -32,7 +32,7 @@ function Navbar() {
                  else {return}
             })
             })
-        },[window.scrollY])
+        },[window.scrollY, sections])
     
         
 
