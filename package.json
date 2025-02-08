@@ -2,7 +2,7 @@
   "name": "app",
   "homepage": "https://mina-clinic.vercel.app/",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
