@@ -4,7 +4,6 @@ import { useRef } from 'react'
 
 
 function Contact() {
-    const contactRef = useRef()
 
     return(
         <div id='contact' class ='section'>

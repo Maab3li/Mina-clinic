@@ -41,7 +41,7 @@ function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
    
   return (
-    <nav className="bg-pink-900 sticky top-0 right-0 z-9999 mt-0" style={{zIndex:'9999'}}>
+    <nav className="bg-pink-900 sticky flex flex-end justify-end items-end top-0 right-0 z-9999 mt-0" style={{zIndex:'9999'}}>
         <div className="flex inline md:hidden">
             <div className="md:hidden">
                 <Hamburger toggled={isOpen} toggle={setIsOpen} color="#FFF" label="Show menu"  />
