@@ -29,7 +29,7 @@ function Navbar() {
                     currentSection = 'appointment';
                     setActiveSection(`#${currentSection}`);
                 }
-                 else {return}
+                
             })
             })
         },[window.scrollY])
@@ -41,18 +41,18 @@ function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
    
   return (
-    <nav className="bg-pink-900 sticky flex justify-end items-end top-0 right-0 z-9999 mt-0" style={{zIndex:'9999'}}>
-        <div className="flex inline md:hidden">
-            <div className="md:hidden">
-                <Hamburger toggled={isOpen} toggle={setIsOpen} color="#FFF" label="Show menu"  />
+    <nav className="bg-pink-900 sticky top-0 right-0 z-9999 mt-0" style={{zIndex:'9999'}}>
+        <ul className="flex md:hidden">
+            <div className="md:px-4 md:py-2 ml-[45%] ">
+                <img src={logo} alt="tooth icon image" className="w-10 h-10 " />
             </div>
-            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start md:px-4 md:py-2">
-                <div class="flex shrink-0 items-center">
-                    <img src={logo} alt="tooth icon image" className="w-10 h-10" />
+            <div className="md:hidden ml-auto ">
+                <div className=''>
+                <Hamburger toggled={isOpen} toggle={setIsOpen} color="#FFF" label="Show menu" />
                 </div>
             </div>
-        </div>
-        <ul className=  {`${isOpen ? 'block' : 'hidden'} md:flex py-2`}>
+        </ul>
+        <ul className=  {`${isOpen ? 'block' : 'hidden'} text-center md:flex py-2 md:ml-auto `}>
             <li className="md:mr-auto md:ml-2">
             <img src={logo} alt="tooth icon image" className="w-10 h-10 hidden md:block" />
             </li>

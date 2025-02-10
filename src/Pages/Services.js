@@ -3,7 +3,7 @@ import { NavHashLink as Link } from 'react-router-hash-link'
 import { useRef } from 'react'
 
 function Services() {
-
+    const servicesRef = useRef()
     return (
         <div id="services" class ='section'>
             <div className='pt-16'>

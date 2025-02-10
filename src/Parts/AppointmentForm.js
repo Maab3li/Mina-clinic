@@ -38,46 +38,46 @@ function AppointmentForm () {
         <form onSubmit={handleSubmit((data) => {
             console.log(data);
         })}>
-            <div className="min-h-screen p-6 mt-0 bg-gray-50 flex items-center justify-center ">
-            <div className="container max-w-screen-lg mx-auto">
+            <div class="min-h-screen p-6 mt-0 bg-gray-50 flex items-center justify-center ">
+            <div class="container max-w-screen-lg mx-auto">
                 <div>
-                <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6 md:w-full mx-auto">
-                    <div className="grid gap-5 gap-y-2 text-sm grid-cols-1">
+                <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6 md:w-full mx-auto">
+                    <div class="grid gap-5 gap-y-2 text-sm grid-cols-1">
                     <div className="text-gray-800 pb-2">
-                        <p className="font-medium text-lg">Appointment Form</p>
+                        <p class="font-medium text-lg">Appointment Form</p>
                         <p>Please fill out all the fields.</p>
                     </div>
 
-                    <div className="lg:col-span-2">
+                    <div class="lg:col-span-2">
                         <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-                        <div className="md:col-span-2">
+                        <div class="md:col-span-2">
                             <label className="font-bold text-gray-800" htmlFor="first_name">First Name</label>
                             <input maxLength={15} {...register('first_name', { required: 'This field is required', maxLength: {value:15,message:'max length reached'},minLength:{value:2, message:'the name is too short'}})} type="text" name="first_name" id="first_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-100"  />
                             {errors.first_name?<div className="bg-red-300 text-red-900 font-bold py-2 px-2 mt-2">{errors.first_name?.message}</div> : null}
                             
                         </div>
-                        <div className="md:col-span-3">
+                        <div class="md:col-span-3">
                             <label className="font-bold text-gray-800" htmlFor="last_name">Last Name</label>
                             <input maxLength={30}  {...register('last_name', { required: 'This field is required', maxLength:30,minLength:{value:10, message:'The name is too short'}})} type="text" name="last_name" id="last_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-100"  />
                             {errors.last_name ?<div className="bg-red-300 text-red-900 font-bold py-2 px-2 mt-2">{errors.last_name?.message}</div> : null}
                             
                         </div>
-                        <div className="md:col-span-5">
+                        <div class="md:col-span-5">
                             <label className="font-bold text-gray-800" htmlFor="email">Email</label>
                             <input {...register('email', { required: 'This field is required', pattern: {value:/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/,message:'Please enter a valid email'}})} type="text" name="email" id="email" class="h-10 border mt-1 rounded px-4 w-full bg-gray-100" placeholder="email@domain.com" />
                             {errors.email ?<div className="bg-red-300 text-red-900 font-bold py-2 px-2 mt-2">{errors.email?.message}</div> : null}
                             
                         </div>
 
-                        <div className="md:col-span-3">
+                        <div class="md:col-span-3">
                             <label className="font-bold text-gray-800" htmlFor="address">Address / Street</label>
                             <input {...register('address', { required: 'This field is required', maxLength:30})} type="text" name="address" id="address" class="h-10 border mt-1 rounded px-4 w-full bg-gray-100" placeholder="" />
                             {errors.address ?<div className="bg-red-300 text-red-900 font-bold py-2 px-2 mt-2">{errors.address?.message}</div> : null}
                         </div>
 
-                        <div className="md:col-span-2">
+                        <div class="md:col-span-2">
                             <label className="font-bold text-gray-800" htmlFor="country">Country / region</label>
-                            <div className="h-10 bg-gray-100 flex border border-gray-200 rounded items-center mt-1">
+                            <div class="h-10 bg-gray-100 flex border border-gray-200 rounded items-center mt-1">
                             <select {...register('country', { required: 'This field is required'})}  name="country" id="country" onChange={(e) =>
                             handleCountryChange(countries.find((c) => c.isoCode === e.target.value))
                             }placeholder="Country" class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent">
@@ -90,9 +90,9 @@ function AppointmentForm () {
                             {errors.country?<div className="bg-red-300 text-red-900 font-bold py-2 px-2 mt-2">{errors.country?.message}</div> : null}
                         </div>
 
-                        <div className="md:col-span-2">
+                        <div class="md:col-span-2">
                             <label className="font-bold text-gray-800" htmlFor="state">State / province</label>
-                            <div className="h-10 bg-gray-100 flex border border-gray-200 rounded items-center mt-1">
+                            <div class="h-10 bg-gray-100 flex border border-gray-200 rounded items-center mt-1">
                             <select {...register('state', { required: 'This field is required'})} name="state" disabled = {!selectedCountry} id="state"   onChange={(e) =>
                             handleStateChange(states.find((s) => s.isoCode === e.target.value))} placeholder="State" class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent">
                                 <option value=''>Select State</option>
@@ -104,7 +104,7 @@ function AppointmentForm () {
                             {errors.state?<div className="bg-red-300 text-red-900 font-bold py-2 px-2 mt-2">{errors.state?.message}</div> : null}
                         </div>
 
-                        <div className="md:col-span-2">
+                        <div class="md:col-span-2">
                             <label className="font-bold text-gray-800" htmlFor="city">City</label>
                             <select {...register('city', { required: 'This field is required'})} type="text" name="city" disabled = {!selectedState} id="city" class="h-10 border mt-1 rounded px-4 w-full bg-gray-100" placeholder="Select City" >
                                 <option value=''>Select City</option>
