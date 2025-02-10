@@ -23,8 +23,9 @@ function AppointmentForm () {
 
     const handleCountryChange= (country) => {
         setSelectedCountry(country);
-        setStates(State.getStatesOfCountry(country.isoCode));
         clearErrors('country')
+        setStates(State.getStatesOfCountry(country.isoCode));
+
         setCities([])
     }
 
@@ -93,9 +94,9 @@ function AppointmentForm () {
                         <div class="md:col-span-2">
                             <label className="font-bold text-gray-800" htmlFor="state">State / province</label>
                             <div class="h-10 bg-gray-100 flex border border-gray-200 rounded items-center mt-1">
-                            <select {...register('state', { required: 'This field is required'})} name="state" disabled = {!selectedCountry} id="state"   onChange={(e) =>
-                            handleStateChange(states.find((s) => s.isoCode === e.target.value))} placeholder="State" class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent">
-                                <option value=''>Select State</option>
+                            <select {...register('state', { required: 'This field is required'})} name="state"  id="state"   onChange={(e) =>
+                            handleStateChange(states.find((state) => state.isoCode === e.target.value))} placeholder="State" class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent">
+                                <option value='no states'>Select State</option>
                                 {states.map((state) => (
                                     <option key={state.isoCode} value={state.isoCode} className="relative">{state.name}</option>
                                 ))}
@@ -107,7 +108,7 @@ function AppointmentForm () {
                         <div class="md:col-span-2">
                             <label className="font-bold text-gray-800" htmlFor="city">City</label>
                             <select {...register('city', { required: 'This field is required'})} type="text" name="city" disabled = {!selectedState} id="city" class="h-10 border mt-1 rounded px-4 w-full bg-gray-100" placeholder="Select City" >
-                                <option value=''>Select City</option>
+                                <option value='no cities'>Select City</option>
                                 {cities.map((city) => (
                                     <option key={city.name} value={city.name} className="relative">{city.name}</option>
                                 ))}
