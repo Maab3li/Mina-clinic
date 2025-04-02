@@ -36,12 +36,12 @@ function Navbar() {
     
         
 
-    const activeStyle = {color: "#FFF",background:'rgb(39, 39, 39)'}
+    const activeStyle = {color: "#FFF",background:'rgb(68, 63, 63)'}
     
     const [isOpen, setIsOpen] = useState(false)
    
   return (
-    <nav className="bg-pink-900 sticky top-0 right-0 z-9999 mt-0" style={{zIndex:'9999'}}>
+    <nav className="bg-pink-200 sticky top-0 right-0 z-9999 mt-0" style={{zIndex:'9999'}}>
         <ul className="flex md:hidden">
             <div className="md:px-4 md:py-2 ml-[45%] ">
                 <img src={logo} alt="tooth icon image" className="w-10 h-10 " />
@@ -56,19 +56,19 @@ function Navbar() {
             <li className="md:mr-auto md:ml-2">
             <img src={logo} alt="tooth icon image" className="w-10 h-10 hidden md:block" />
             </li>
-            <li class='nav' className="px-4 py-2 text-yellow-100 font-bold">
+            <li class='nav' className="px-4 py-2 text-pink-400 font-bold">
                 <Link to='#home' smooth className='pt-1 pb-2 px-2 rounded-2xl'style={activeSection === ("#home")? activeStyle: {}}>Home</Link>
             </li>
-            <li class='nav' className="px-4 py-2 text-yellow-100 font-bold">
+            <li class='nav' className="px-4 py-2 text-pink-400 font-bold">
                 <Link to='#services' smooth className='pt-1 pb-2 px-2 rounded-2xl' style={activeSection === ("#services")? activeStyle: {}} >Services</Link>
             </li>
-            <li class='nav' className="px-4 py-2 text-yellow-100 font-bold">
+            <li class='nav' className="px-4 py-2 text-pink-400 font-bold">
                 <Link to='#about' smooth className='pt-1 pb-2 px-2 rounded-2xl' style={activeSection === ("#about")? activeStyle: {}}>About</Link>
             </li>
-            <li class='nav' className="px-4 py-2 text-yellow-100 font-bold">
+            <li class='nav' className="px-4 py-2 text-pink-400 font-bold">
                 <Link to='#appointment' smooth className='pt-1 pb-2 px-2 rounded-2xl'style={activeSection === ("#appointment")? activeStyle: {}}>Appointment</Link>
             </li>
-            <li class='nav' className="px-4 py-2 text-yellow-100 font-bold">
+            <li class='nav' className="px-4 py-2 text-pink-400 font-bold">
                 <Link to='#contact' smooth className='pt-1 pb-2 px-2 rounded-2xl' style={activeSection === ("#contact")? activeStyle: {}}>Contact</Link>
             </li>
         </ul>
